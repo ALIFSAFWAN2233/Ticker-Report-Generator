@@ -5,20 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     
-    <title>Basic Ticker Report Generator</title>
+    <title>Basic Stock Prediction Generator</title>
 </head>
 <body>
     <header>
-        <h1>Welcome to Basic Ticker Report Generator</h1>
+        <h1>Welcome to Basic Stock Prediction Generator</h1>
     </header>
     <main>
 
+        <!--This section is the main section/initial page of this project-->
+        <section class="action-panel">
+            <form id="ticker-input-form">
+                <label for="ticker-input"> Add up to 3 stock tickers below to get a super accurate stock predictions report👇 </label>
+                <!-- This div has an input field that accepts stock tickers (MSFT, AAPL, AMZN) -->
+                <div class="form-input-control">
+                    <input type="text" id="ticker-input" placeholder="MSFT">
+                    <button class="add-ticker-btn">
+                        <img src="images/add.svg" class="add-ticker-svg" alt="add"> 
+                    </button>
+                </div>
+            </form>
+            <p class="ticker-choice-display">
+                Your tickers will appear here...
+            </p>
+            <button class="generate-report-btn" type="button" disabled>
+                Generate Report
+            </button>
+            <p class="tag-line">Always correct 15% of the time!</p>
+        </section>
 
+        <!--This section is to display spinning loading icon-->
+        <section class="loading-panel">
+            <img src="images/loader.svg" alt="loading">
+            <div id="api-message">Querying Stocks API...</div>
+        </section>
 
+        <section class="output-panel">
+            <h2>Your Report 😜</h2>
+        </section>
 
-
-        
-        <p>This is a simple HTML page to get you started. Customize it as needed!</p>
     </main>
     <footer>
         <p>&copy; 2025 Alif Safwan</p>
