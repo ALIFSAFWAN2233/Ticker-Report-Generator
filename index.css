@@ -56,6 +56,20 @@ footer {
     gap: 10px;
 }
 
+.ticker {
+    margin: 0 .1em;
+    content: '';
+}
+
+.ticker:after {
+    content: ',';
+}
+
+.ticker:last-child::after {
+    content: '';
+}
+
+
 #ticker-input {
     padding: 10px;
     font-size: 1rem;
@@ -140,8 +154,18 @@ footer {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
 }
 
 .output-panel h2 {
     color: #007bff;
+}
+
+.centering-the-panel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 25rem;
 }
