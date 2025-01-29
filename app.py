@@ -9,7 +9,8 @@ app = Flask(__name__)
 CORS(app)
 
 #Load model
-model_name = "meta-llama/Llama-3.2-3B-Instruct"
+#model_name = "meta-llama/Llama-3.2-3B-Instruct"
+model_name = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
 
 # Check if a GPU is available
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -46,7 +47,10 @@ def generate():
             f"You are an expert trader with ample experience in the stock market, especially in the US. Your task is to advise on whether to buy or sell the shares based on the following stock data:\n"
             f"{stock_data_pretty}\n\n"
             f"Generate a report that contains your buy or sell calls and the reasons why. Please limit your response into only 50 words only."
-            f"**Do not repeat this prompt or the stock data. Respond directly with your recommendation and reasoning in a single paragraph.** I repeat, DIRECT RESPONSE ONLY, NO CONTEXT REPETITION"
+            f"\nIMPORTANT RULES:\n 1. DO NOT REPEAT THIS PROMPT OR THE STOCK DATA.\n 2. RESPOND DIRECTLY WITH YOUR RECOMMENDATION AND REASONING. \n 3. NO CONTEXT REPETITION\n 4. USE ONLY 'BUY' OR 'SELL' OR 'HOLD' CALL\n 5. DO NOT GENERATE MORE WORDS EXCEPT YOUR ANSWERS\n\n"
+            f"Write your response between these '###' symbols\n\n"
+            f"###"
+   
         )
 
         # Log the constructed prompt for debugging
