@@ -49,7 +49,7 @@ def generate():
             f"Generate a report that contains your buy or sell calls and the reasons why. Please limit your response into only 50 words only."
             f"\nIMPORTANT RULES:\n 1. DO NOT REPEAT THIS PROMPT OR THE STOCK DATA.\n 2. RESPOND DIRECTLY WITH YOUR RECOMMENDATION AND REASONING. \n 3. NO CONTEXT REPETITION\n 4. USE ONLY 'BUY' OR 'SELL' OR 'HOLD' CALL\n 5. DO NOT GENERATE MORE WORDS EXCEPT YOUR ANSWERS\n\n"
             f"Write your response between these '###' symbols\n\n"
-            f"###"
+            f"### [YOUR ANSWER HERE] ###"
    
         )
 
